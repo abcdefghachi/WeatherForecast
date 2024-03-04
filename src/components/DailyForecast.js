@@ -51,9 +51,11 @@ function DailyForecast({ days }) {
             className="col-4 text-center my-2 px-3 cursor-pointer"
             onClick={() => handleDayClick(day)}
           >
-            <p>{`${monthNames[new Date(day.date).getMonth()]} ${new Date(
-              day.date
-            ).getDate()}`}</p>
+            <p>
+              <strong>{`${monthNames[new Date(day.date).getMonth()]} ${new Date(
+                day.date
+              ).getDate()}`}</strong>
+            </p>
             <img src={day.day.condition.icon} alt={day.day.condition.text} />
             <p>{day.day.avgtemp_c}°C</p>
           </div>
@@ -83,9 +85,11 @@ function DailyForecast({ days }) {
             },
           }}
         >
-          <p className="text-center">{selectedDay.date}</p>
+          <p className="text-center">
+            <strong>{selectedDay.date}</strong>
+          </p>
           <div className="row d-flex justify-content-between">
-            <div className="col-6">
+            <div className="col-7">
               <p>
                 <strong>Max Temperature :</strong> {selectedDay.day.maxtemp_c}°C
                 ({selectedDay.day.maxtemp_f}°F)
@@ -97,6 +101,17 @@ function DailyForecast({ days }) {
               <p>
                 <strong>Average Temperature: </strong>
                 {selectedDay.day.avgtemp_c}°C ({selectedDay.day.avgtemp_f}°F)
+              </p>
+              <p>
+                <strong>Max wind: </strong>
+                {selectedDay.day.maxwind_mph}m/h ({selectedDay.day.maxwind_kph}
+                km/h)
+              </p>
+              <p>
+                <strong>Precipitation: </strong>
+                {selectedDay.day.totalprecip_mm}mm (
+                {selectedDay.day.totalprecip_in}
+                inch)
               </p>
               <p>
                 <strong>Humidity: </strong>
@@ -119,7 +134,7 @@ function DailyForecast({ days }) {
                 {selectedDay.day.condition.text}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-5">
               <p>
                 <strong>Sunrise: </strong>
                 {selectedDay.astro.sunset}

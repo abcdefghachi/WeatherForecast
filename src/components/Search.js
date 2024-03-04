@@ -18,7 +18,7 @@ function Search({ city, setCity }) {
   }, [city]);
 
   return (
-    <div className="d-flex flex-col align-items-center mb-4">
+    <div className="d-flex flex-col align-items-center">
       <d className="fs-5 fw-medium">City</d>
       <Form className="ms-2" onSubmit={handleSubmit}>
         <Form.Control
