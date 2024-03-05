@@ -25,7 +25,7 @@ function Search({ city, setCity }) {
           type="text"
           id="cityInput"
           placeholder="City..."
-          className="form-control-lg shadow-sm fs-5 text-capitalize custom-input "
+          className="form-control-lg shadow-sm fs-5 text-capitalize custom-input"
           value={inputCity}
           onChange={handleChange}
         />
